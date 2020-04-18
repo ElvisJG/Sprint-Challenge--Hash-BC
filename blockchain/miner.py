@@ -25,7 +25,7 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     proof = 0
     while valid_proof(hashlib.sha256(f'{last_proof}'.encode()).hexdigest(), proof) is False:
-        proof += random.randint(0, 1000)
+        proof += 1
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
